@@ -1,8 +1,28 @@
 import React from "react";
 import Zuri from "../Images/Zuri.png";
 import I4G from "../Images/I4G.png";
+import { useState } from "react";
 
 const Home = () => {
+  const [firstName, setFirstname] = useState("");
+  const [lastName, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [display_text, setDisplay_text] = useState("hidden");
+
+  const HandleCLick = (e) => {
+    if (message === "") {
+      setDisplay_text("flex");
+    } else {
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setMessage("");
+      setDisplay_text("hidden");
+    }
+    e.preventDefault();
+  };
+
   return (
     <>
       <div className=" w-full flex items-center pt-[64px] flex-col h-screen">
@@ -20,10 +40,12 @@ const Home = () => {
                   First name
                 </label>
                 <input
+                  value={firstName}
+                  onChange={(e) => setFirstname(e.target.value)}
                   type="text"
                   id="first_name"
                   placeholder="Enter your first name"
-                  className="border h-[44px] w-full outline-blue-300 px-[10px]"
+                  className="border h-[44px] w-full outline-blue-300 px-[10px] rounded-[8px]"
                 />
               </div>
               <div className="w-full mb-[20px] flex-col justify-end md:ml-[10px]">
@@ -31,10 +53,12 @@ const Home = () => {
                   Last name
                 </label>
                 <input
+                  value={lastName}
+                  onChange={(e) => setLastname(e.target.value)}
                   type="text"
                   id="last_name"
                   placeholder="Enter your last name"
-                  className="border h-[44px] rounded-[5px] w-[100%] outline-blue-300 px-[10px]"
+                  className="border h-[44px] rounded-[8px] w-[100%] outline-blue-300 px-[10px]"
                 />
               </div>
             </div>
@@ -43,10 +67,12 @@ const Home = () => {
                 Email
               </label>
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type="text"
                 id="email"
                 placeholder="youremail@email.com"
-                className="w-full border h-[44px] rounded-[5px] outline-blue-300 px-[10px]"
+                className="w-full border h-[44px] rounded-[8px] outline-blue-300 px-[10px]"
               />
             </div>
             <div className="message mb-[20px]">
@@ -54,20 +80,26 @@ const Home = () => {
                 Message
               </label>
               <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Send me a message and I'll reply you as soon as possible..."
-                className="w-full border rounded-[5px] h-[132px] focus:border-blue-300 outline-blue-300 resize-none p-[10px]"
+                className="w-full border rounded-[10px] h-[132px] focus:border-blue-300 outline-blue-300 resize-none p-[10px]"
               />
+              <p className={`text-red-500 ${display_text}`}>
+                Please enter a message
+              </p>
             </div>
             <div className="flex mb-[20px]">
-              <input type="checkbox" className="mr-[10px]" />
-              <p>
+              <input id="tick-box" type="checkbox" className="mr-[10px]" />
+              <p htmlFor="tick-box">
                 You agree to providing your data to Onyedibe Sixtus who may
                 contact you.
               </p>
             </div>
             <button
+              onClick={HandleCLick}
               id="btn__submit"
-              className="w-full bg-blue-600 h-[40px] text-white rounded-[5px]"
+              className="w-full bg-blue-600 h-[48px] text-white rounded-[5px]"
             >
               Send Message
             </button>
