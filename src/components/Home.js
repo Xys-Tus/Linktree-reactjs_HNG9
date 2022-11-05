@@ -90,8 +90,8 @@ const Home = () => {
             id="book_design"
             // href="https://books.zuri.team/design-rules"
             to="/contact"
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
             Contact
           </Link>
