@@ -1,7 +1,6 @@
 import React from "react";
 import Zuri from "../Images/Zuri.png";
 import I4G from "../Images/I4G.png";
-import Input_hover from "../Images/input_hover.png";
 import Input_normal from "../Images/input_normal.png";
 import Input_checked from "../Images/Input_checked.png";
 import { useState } from "react";
