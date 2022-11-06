@@ -93,7 +93,7 @@ const Home = () => {
             // target="_blank"
             // rel="noopener noreferrer"
           >
-            Contact
+            Contact Me
           </Link>
         </div>
         <div className="w-full flex items-center justify-center h-[50px]">
