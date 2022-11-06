@@ -135,7 +135,7 @@ const Home = () => {
               <input
                 value={email}
                 onChange={HandleEmail}
-                type="text"
+                type="email"
                 id="email"
                 placeholder="youremail@email.com"
                 className={`w-full ${border2} border h-[44px] rounded-[8px] outline-blue-300 px-[10px]`}
@@ -198,17 +198,6 @@ const Home = () => {
           </footer>
         </div>
       </div>
-      {/* <div className="px-[20px] md:px-[40px] mb-[50px] md:mb-0 mt-[96px]">
-        <footer className="flex justify-between md:items-center flex-col md:flex-row border-t h-[160px]">
-          <div className="zuri my-[20px] md:my-0">
-            <img src={Zuri} alt="" />
-          </div>
-          <p className="text-gray-400">HNG Internship 9 Frontend Task</p>
-          <div className="I4g my-[20px] md:my-0">
-            <img src={I4G} alt="" />
-          </div>
-        </footer>
-      </div> */}
     </>
   );
 };
