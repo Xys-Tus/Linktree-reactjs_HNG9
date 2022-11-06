@@ -99,7 +99,7 @@ const Home = () => {
               Hi there, contact me to ask me about anything you have in mind.
             </p>
           </div>
-          <form>
+          <form onSubmit={HandleCLick}>
             <div className="flex flex-col md:flex-row justify-between w-full ">
               <div className="w-full mr-[10px] mb-[20px] md:mb-0">
                 <label htmlFor="first_name" className=" font-semibold ">
@@ -147,6 +147,7 @@ const Home = () => {
               </label>
               {message !== "" ? (
                 <textarea
+                  id="message"
                   value={message}
                   onChange={HandleMessage}
                   placeholder={`Hey ${name}, hope you are doing great. Let us collaborate on project axyz.`}
@@ -154,6 +155,7 @@ const Home = () => {
                 />
               ) : (
                 <textarea
+                  id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Send me a message and I'll reply you as soon as possible..."
@@ -178,7 +180,6 @@ const Home = () => {
               </p>
             </div>
             <button
-              onClick={HandleCLick}
               id="btn__submit"
               className="w-full bg-blue-600 h-[48px] text-white rounded-[5px] font-semibold"
             >
