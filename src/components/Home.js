@@ -87,11 +87,8 @@ const Home = () => {
           </a>
           <Link
             className="h-[68px] w-full bg-gray-200 rounded flex justify-center items-center mb-[1rem] cursor-pointer text-sm md:text-lg font-medium"
-            id="book_design"
-            // href="https://books.zuri.team/design-rules"
+            id="contact"
             to="/contact"
-            // target="_blank"
-            // rel="noopener noreferrer"
           >
             Contact Me
           </Link>
